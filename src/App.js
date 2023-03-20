@@ -10,10 +10,11 @@ function App() {
   const [expandedBatches, setexpandedBatches] = useState([]);
   const [expandedYears, setexpandedYears] = useState([]);
   const [expandedSemesters, setexpandedSemesters] = useState([]);
-  const [data, setData] = useState({});
-  useEffect(() => {
-      setData(myFunction());
-  }, []);
+  // const [data, setData] = useState({});
+  // useEffect(() => {
+  //     setData(myFunction());
+  // }, []);
+  let data = myFunction();
   const rowdata = data.Department;
   const columndata = data.Year;
 
@@ -222,7 +223,7 @@ function App() {
         <span>{semester}</span>
         {subjectArray.map((subval) => (
           <th>
-            <div>{subval.value}</div>
+            <div className="subjects-container">{subval.value}</div>
             <div className="sub-column-heading">
               <div>Written</div>
               <div className="border-none">Practical</div>
